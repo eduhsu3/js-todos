@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>투두리스트</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>ToDoList</h1>
+            <div id="datetime">
+                <div id="date"></div>
+                <div id="day"></div>
+                <div id="time"></div>
+                <div class="weather_wrap">
+                    <div id="weather"></div>
+                    <img class="icon" />
+                </div>
+                <!-- 날씨 출력을 위한 요소 -->
+            </div>
+            <div class="input-group">
+                <input type="text" id="todo-input" autocomplete="off" placeholder="입력해주세요" />
+                <button onclick="addTodo()">추가</button>
+                <!-- <button onclick="updateWeather()">날씨</button> -->
+
+                <!-- 날씨 업데이트 버튼 추가 -->
+            </div>
+            <ul id="todo-list">
+                <!-- 템플릿을 이용해 항목 추가 -->
+            </ul>
+
+            <!-- 템플릿 정의 -->
+            <template id="todo-item-template">
+                <li class="todo-item">
+                    <div class="done">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" class="is-done-checkbox" />
+                            <span class="checkmark">
+                                <i class="fas fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <p class="text"></p>
+                    <div class="buttons">
+                        <button type="button" class="modify-btn">수정</button>
+                        <button type="button" class="delete-btn">삭제</button>
+                    </div>
+                </li>
+            </template>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
